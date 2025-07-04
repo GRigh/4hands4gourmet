@@ -61,75 +61,7 @@
       <!-- Spinner End -->
 
       <!-- Navbar & Hero Start -->
-      <div class="container-xxl position-relative p-0">
-        <nav
-          class="navbar navbar-expand-lg navbar-dark bg-dark px-4 px-lg-5 py-3 py-lg-0"
-        >
-          <a href="" class="navbar-brand p-0">
-            <h2 class="text-primary m-0">
-              <img src="img/logo.jpeg" alt="Logo" /></i> 4Hands4Gourmet
-            </h2>
-          </a>
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarCollapse"
-          >
-            <span class="fa fa-bars"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarCollapse">
-            <div class="navbar-nav ms-auto py-0 pe-4">
-              <a href="index.html" class="nav-item nav-link active">Home</a>
-              <a href="about.html" class="nav-item nav-link">Chi siamo</a>
-              <a href="service.html" class="nav-item nav-link">Servizi</a>
-              <a href="menu.html" class="nav-item nav-link">Menu</a>
-              <div class="nav-item dropdown">
-                <a
-                  href="#"
-                  class="nav-link dropdown-toggle"
-                  data-bs-toggle="dropdown"
-                  >Esplora</a
-                >
-                <div class="dropdown-menu m-0">
-                  <a href="booking.html" class="dropdown-item">Prenota</a>
-                  <a href="team.html" class="dropdown-item">Il nostor team</a>
-                  <a href="testimonial.html" class="dropdown-item"
-                    >Recensioni</a
-                  >
-                </div>
-              </div>
-              <a href="contact.html" class="nav-item nav-link">Contatti</a>
-            </div>
-            <a href="booking.html" class="btn btn-primary py-2 px-4"
-              >Prenota</a
-            >
-          </div>
-        </nav>
-
-        <div class="container-xxl py-5 hero-header mb-5">
-          <div class="container my-5 py-5">
-            <div class="row align-items-center g-5">
-              <div class="col-lg-6 text-center text-lg-start">
-                <h1 class="display-3 text-white animated slideInLeft">
-                  Godetevi i nostri <br />Piatti deliziosi
-                </h1>
-                <p class="text-white animated slideInLeft mb-4 pb-2">
-                  Un viaggio di sapori autentici, preparati con amore e ingredienti freschi, lasciati conquistare dai profumi e dai sapori della nostra cucina gourmet.
-                </p>
-                <a
-                  href=""
-                  class="btn btn-primary py-sm-3 px-sm-5 me-3 animated slideInLeft"
-                  >Prenota un tavolo</a
-                >
-              </div>
-              <div class="col-lg-6 text-center text-lg-end overflow-hidden">
-                <img class="img-fluid" src="img/hero.png" alt="" />
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      <div id="navbar"></div>
       <!-- Navbar & Hero End -->
 
       <!-- Service Start -->
@@ -1146,7 +1078,13 @@
       <div id="footer"></div>
     </div>
      
-
+  <script>
+    fetch('navbar.html')
+      .then(response => response.text())
+      .then(html => {
+        document.getElementById('navbar').innerHTML = html;
+      });
+  </script>
   <script>
     fetch('footer.html')
       .then(response => response.text())
