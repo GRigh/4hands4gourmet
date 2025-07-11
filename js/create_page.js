@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
   fetch(navbarFile)
     .then(response => response.text())
     .then(html => {
-      document.getElementById('navbar-home').innerHTML = html;
+      document.getElementById('navbar').innerHTML = html;
     });
 
   fetch(footerFile)
