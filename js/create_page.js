@@ -7,10 +7,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (path === "/" || path.endsWith("index.html")) {
     detailFile = "navbar/detail/index.html";
-  }
-
-  if (path.endsWith("about.html")) {
+  } else if (path.endsWith("about.html")) {
     detailFile = "navbar/detail/about.html";
+  } else if (path.endsWith("booking.html")) {
+    detailFile = "navbar/detail/booking.html";
+  } else if (path.endsWith("contact.html")) {
+    detailFile = "navbar/detail/contact.html";
+  } else if (path.endsWith("service.html")) {
+    detailFile = "navbar/detail/service.html";
+  } else if (path.endsWith("team.html")) {
+    detailFile = "navbar/detail/team.html";
+  } else if (path.endsWith("testimonial.html")) {
+    detailFile = "navbar/detail/testimonial.html";
   }
 
   // carica navbar
