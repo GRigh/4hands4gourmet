@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<title>Pagina non trovata</title>
+<style>
+  body { font-family: Arial, sans-serif; text-align: center; padding-top: 50px; }
+</style>
+</head>
+<body>
+
+<h1>Oops! Pagina non trovata</h1>
+<p>Stai per essere reindirizzato alla home corretta…</p>
+
+<script>
+  // Prendi il path attuale
+  const path = window.location.pathname.toLowerCase();
+
+  let redirectUrl = '/'; // fallback
+
+  if (path.includes('/it/')) {
+    redirectUrl = '/4hands4gourmet/it/index.html';
+  } else if (path.includes('/en/')) {
+    redirectUrl = '/4hands4gourmet/en/index.html';
+  } else {
+    // Se non è chiaro, puoi scegliere una lingua di default
+    redirectUrl = '/4hands4gourmet/it/index.html';
+  }
+
+  setTimeout(() => {
+    window.location.href = redirectUrl;
+  }, 2000);
+</script>
+
+</body>
+</html>
