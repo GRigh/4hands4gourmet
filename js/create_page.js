@@ -2,8 +2,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const path = window.location.pathname;
 
   // controlla se sei su index.html
-  let footerFile = "footer.html";
-  let navbarFile = "navbar-common.html";
+  let footerFile = "footer/footer.html";
+  let navbarFile = "navbar/navbar-common.html";
   if (path === "/" || path.endsWith("index.html")) {
     navbarFile = "navbar-home.html";
   }
