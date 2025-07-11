@@ -6,7 +6,6 @@ document.addEventListener("DOMContentLoaded", () => {
   let navbarFile = "navbar/navbar-common.html";
   if (path === "/" || path.endsWith("index.html")) {
     navbarFile = "navbar/navbar-home.html";
-    console.log("!!!QUA!!!");
   }
 
   fetch(navbarFile)
