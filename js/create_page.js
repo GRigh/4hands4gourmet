@@ -2,11 +2,11 @@ document.addEventListener("DOMContentLoaded", () => {
   const path = window.location.pathname;
 
   const footerFile = "footer/footer.html";
-  let navbarFile = "navbar/navbar-common.html";
+  let navbarFile = "navbar/navbar.html";
   let detailFile = "";
 
   if (path === "/" || path.endsWith("index.html")) {
-    navbarFile = "navbar/navbar-home.html";
+    detailFile = "navbar/detail/index.html";
   }
 
   if (path.endsWith("about.html")) {
