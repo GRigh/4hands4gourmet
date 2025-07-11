@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
   let footerFile = "footer/footer.html";
   let navbarFile = "navbar/navbar-common.html";
   if (path === "/" || path.endsWith("index.html")) {
-    navbarFile = "navbar-home.html";
+    navbarFile = "navbar/navbar-home.html";
   }
 
   fetch(navbarFile)
