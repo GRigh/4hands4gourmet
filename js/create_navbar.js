@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
   if (path.endsWith("about.html")) {
     detail = "navbar/detail/about.html";
   }
-
+  console.log(path);
   fetch(detail)
     .then(response => response.text())
     .then(html => {
