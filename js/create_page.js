@@ -18,6 +18,19 @@ document.addEventListener("DOMContentLoaded", () => {
     .then(response => response.text())
     .then(html => {
       document.getElementById("navbar").innerHTML = html;
+      const path = window.location.pathname.split("/").pop() || "index.html";
+      //gestione link navbar
+      document
+        .querySelectorAll(".navbar-nav .nav-link")
+        .forEach(link => {
+          const href = link.getAttribute("href");
+
+          if (href === path) {
+            link.classList.add("active");
+          } else {
+            link.classList.remove("active");
+          }
+        });
 
       // solo ora il DOM della navbar esiste
       if (detailFile) {
