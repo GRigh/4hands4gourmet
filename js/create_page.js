@@ -1,10 +1,22 @@
-fetch('navbar.html')
-      .then(response => response.text())
-      .then(html => {
-        document.getElementById('navbar').innerHTML = html;
-      });
-fetch('footer.html')
-      .then(response => response.text())
-      .then(html => {
-        document.getElementById('footer').innerHTML = html;
-      });
+document.addEventListener("DOMContentLoaded", () => {
+  const path = window.location.pathname;
+
+  // controlla se sei su index.html
+  let footerFile = "footer.html";
+  let navbarFile = "navbar-common.html";
+  if (path === "/" || path.endsWith("index.html")) {
+    navbarFile = "navbar-home.html";
+  }
+
+  fetch(navbarFile)
+    .then(response => response.text())
+    .then(html => {
+      document.getElementById('navbar-home').innerHTML = html;
+    });
+
+  fetch(footerFile)
+    .then(response => response.text())
+    .then(html => {
+      document.getElementById('footer').innerHTML = html;
+    });
+});
