@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
   const path = window.location.pathname;
-
+  const langPrefix = path.split("/")[1] ? `/${path.split("/")[1]}` : "";
   const footerFile = "footer/footer.html";
   let navbarFile = "navbar/navbar.html";
   let detailFile = getDetailFile(path);
@@ -59,21 +59,22 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 function getDetailFile(path) {
-  if (path === "/" || path.endsWith("index.html")) {
-    return "navbar/detail/index.html";
-  } else if (path.endsWith("about.html")) {
-    return "navbar/detail/about.html";
-  } else if (path.endsWith("booking.html")) {
-    return "navbar/detail/booking.html";
-  } else if (path.endsWith("contact.html")) {
-    return "navbar/detail/contact.html";
-  } else if (path.endsWith("service.html")) {
-    return "navbar/detail/service.html";
-  } else if (path.endsWith("team.html")) {
-    return "navbar/detail/team.html";
-  } else if (path.endsWith("testimonial.html")) {
-    return "navbar/detail/testimonial.html";
+  function getDetailFile(path, langPrefix) {
+    if (path === "/" || path.endsWith("index.html")) {
+      return `${langPrefix}/navbar/detail/index.html`;
+    } else if (path.endsWith("about.html")) {
+      return `${langPrefix}/navbar/detail/about.html`;
+    } else if (path.endsWith("booking.html")) {
+      return `${langPrefix}/navbar/detail/booking.html`;
+    } else if (path.endsWith("contact.html")) {
+      return `${langPrefix}/navbar/detail/contact.html`;
+    } else if (path.endsWith("service.html")) {
+      return `${langPrefix}/navbar/detail/service.html`;
+    } else if (path.endsWith("team.html")) {
+      return `${langPrefix}/navbar/detail/team.html`;
+    } else if (path.endsWith("testimonial.html")) {
+      return `${langPrefix}/navbar/detail/testimonial.html`;
+    }
+    return "";
   }
-  // opzionale: se nessun caso corrisponde
-  return "";
 }
