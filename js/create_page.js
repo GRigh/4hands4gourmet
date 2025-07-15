@@ -5,7 +5,8 @@ document.addEventListener("DOMContentLoaded", () => {
   console.log("LANG:", lang);
   const footerFile = `/${lang}/footer/footer.html`;
   const navbarFile = `/${lang}/navbar/navbar.html`;
-  let detailFile = getDetailFile(path);
+  let detailFile = getDetailFile(path, lang);
+  console.log("DETAIL:", detailFile);
   // carica navbar
   fetch(navbarFile)
     .then(response => response.text())
