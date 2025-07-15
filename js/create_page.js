@@ -1,6 +1,8 @@
 document.addEventListener("DOMContentLoaded", () => {
   const path = window.location.pathname;
   const lang = getLang(path);
+  console.log("PATH:", path);
+  console.log("LANG:", lang);
   const footerFile = `/${lang}/footer/footer.html`;
   const navbarFile = `/${lang}/navbar/navbar.html`;
   let detailFile = getDetailFile(path);
@@ -42,8 +44,14 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 function getLang(path) {
-  const parts = path.split("/").filter(Boolean);
-  return (parts[0] === "it" || parts[0] === "en") ? parts[0] : "it";
+  const segments = path.split("/");
+  if (segments.includes("en")) {
+    return "en";
+  }
+  if (segments.includes("it")) {
+    return "it";
+  }
+  return "it"; // fallback
 }
 
 function getDetailFile(path, lang) {
