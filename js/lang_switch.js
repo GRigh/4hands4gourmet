@@ -14,7 +14,7 @@ function initLangSwitch(langSwitch) {
   const isItalian = path.includes("/it/");
   const isEnglish = path.includes("/en/");
 
-  langSwitch.textContent = isItalian ? "ENG" : "ITA";
+  // langSwitch.textContent = isItalian ? "ENG" : "ITA";
 
   langSwitch.addEventListener("click", (e) => {
     e.preventDefault();
